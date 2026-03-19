@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "dq-prof"
-version = "0.1.17"
+version = "0.1.18"
 description = "Prebuilt dq-prof binary wrapper"
 readme = "python/README.md"
 authors = [{name="dq-prof"}]
