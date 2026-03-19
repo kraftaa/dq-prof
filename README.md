@@ -1,4 +1,4 @@
-# dq-prof
+# dq-prof 0.1.3
 
 Fast CLI to sanity-check CSV/Parquet/Postgres datasets, flag nulls/skew/outliers/freshness/schema drift, and fail CI if data looks wrong.
 

@@ -1,4 +1,4 @@
-# dq-prof (PyPI wrapper)
+# dq-prof (PyPI wrapper) v0.1.3
 
 Python wrapper that bundles the prebuilt `dq-prof` binary and exposes it as a `dq-prof` console script.
 
