@@ -31,9 +31,7 @@ jobs:
       - name: Install maturin and zig
         run: python -m pip install --upgrade pip maturin ziglang
       - name: Build wheel (Linux targets)
-        run: |
-          python -m pip install --upgrade pip maturin ziglang
-          maturin build --release --strip --interpreter python3 --manifest-path python/pyproject.toml --target ${{ matrix.target }} --zig --out python/target/wheels
+        run: maturin build --release --strip --interpreter python3 --manifest-path Cargo.toml --target ${{ matrix.target }} --zig --out python/target/wheels
       - name: Upload wheel artifact
         uses: actions/upload-artifact@v4
         with:
@@ -61,7 +59,7 @@ jobs:
       - name: Install maturin
         run: python -m pip install --upgrade pip maturin
       - name: Build wheel (macOS targets)
-        run: maturin build --release --strip --interpreter python3 --manifest-path python/pyproject.toml --target ${{ matrix.target }} --out python/target/wheels
+        run: maturin build --release --strip --interpreter python3 --manifest-path Cargo.toml --target ${{ matrix.target }} --out python/target/wheels
       - name: Upload wheel artifact
         uses: actions/upload-artifact@v4
         with:
