@@ -73,22 +73,22 @@ jobs:
         run: |
           ls -l wheels
           python - <<'PY'
-import pathlib, zipfile, sys
-found = False
-for whl in pathlib.Path("wheels").glob("*.whl"):
-    found = True
-    with zipfile.ZipFile(whl) as z:
-        meta = [m for m in z.namelist() if m.endswith(".dist-info/METADATA")]
-        if not meta:
-            print(f"{whl}: no METADATA", file=sys.stderr)
-            sys.exit(1)
-        data = z.read(meta[0]).decode("utf-8", errors="replace")
-        print(f"---- {whl} ----")
-        for line in data.splitlines()[:8]:
-            print(line)
-if not found:
-    print("No wheels found", file=sys.stderr)
-    sys.exit(1)
+  import pathlib, zipfile, sys
+  found = False
+  for whl in pathlib.Path("wheels").glob("*.whl"):
+      found = True
+      with zipfile.ZipFile(whl) as z:
+          meta = [m for m in z.namelist() if m.endswith(".dist-info/METADATA")]
+          if not meta:
+              print(f"{whl}: no METADATA", file=sys.stderr)
+              sys.exit(1)
+          data = z.read(meta[0]).decode("utf-8", errors="replace")
+          print(f"---- {whl} ----")
+          for line in data.splitlines()[:8]:
+              print(line)
+  if not found:
+      print("No wheels found", file=sys.stderr)
+      sys.exit(1)
 PY
       - name: Publish to PyPI via trusted publishing
         uses: pypa/gh-action-pypi-publish@v1.8.14

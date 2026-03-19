@@ -1,4 +1,4 @@
-# dq-prof 0.1.6
+# dq-prof 0.1.7
 
 [![Release](https://img.shields.io/github/v/release/kraftaa/dq-prof)](https://github.com/kraftaa/dq-prof/releases)
 
