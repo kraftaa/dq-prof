@@ -1,6 +1,9 @@
 name: publish-pypi
 
 on:
+  push:
+    tags:
+      - 'v*'
   release:
     types: [published]
 
