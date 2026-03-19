@@ -2,7 +2,10 @@
 
 [![Release](https://img.shields.io/github/v/release/kraftaa/dq-prof)](https://github.com/kraftaa/dq-prof/releases)
 
-Fast, zero-config data sanity checks for pipelines. Like Ruff, but for datasets.
+Fast, zero-config data sanity checks for pipelines.
+
+Run one command and instantly see if your data is broken.
+Like Ruff, but for datasets.
 
 ## Quick example
 
@@ -21,10 +24,10 @@ WARNING
 ## Why dq-prof
 
 - **Zero config** – no YAML, no expectations to write
-- **Fast** – samples by default; runs in seconds
+- **Fast** – runs in seconds on sampled data
 - **Catches real issues** – null spikes, skew, outliers, freshness, schema drift
-- **Baseline-aware** – compare to previous runs to spot drift
-- **CI-friendly** – fail pipelines when data looks suspicious
+- **Baseline-aware** – detect changes vs previous runs
+- **CI-friendly** – fail pipelines when data looks wrong
 
 ## Install
 
