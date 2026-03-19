@@ -1,7 +1,7 @@
 use std::io::Read;
 
 use polars::prelude::*;
-use polars_io::prelude::CsvReader;
+use polars::prelude::CsvReader;
 use postgres::{Client, NoTls};
 
 use crate::error::{Error, Result};
