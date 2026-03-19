@@ -1,5 +1,7 @@
 # dq-prof 0.1.4
 
+[![Release](https://img.shields.io/github/v/release/kraftaa/dq-prof)](https://github.com/kraftaa/dq-prof/releases)
+
 Fast, zero-config data sanity checks for pipelines. Like Ruff, but for datasets.
 
 ## Quick example
