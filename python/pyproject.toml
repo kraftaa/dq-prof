@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=62"]
-build-backend = "setuptools.build_meta"
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
 
 [project]
 name = "dq-prof"
-version = "0.1.5"
+version = "0.1.6"
 description = "Prebuilt dq-prof binary wrapper"
 readme = "README.md"
 authors = [{name="dq-prof"}]
@@ -15,13 +15,9 @@ classifiers = [
     "Programming Language :: Rust",
     "License :: OSI Approved :: MIT License",
 ]
+scripts = { dq-prof = "dq_prof.cli:main" }
 
-[project.scripts]
-dq-prof = "dq_prof.cli:main"
-
-[tool.setuptools.package-data]
-"dq_prof" = ["bin/dq-prof"]
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["dq_prof*"]
+[tool.maturin]
+bindings = "bin"
+strip = true
+include = ["dq_prof/bin/dq-prof"]
