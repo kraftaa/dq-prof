@@ -1,0 +1,41 @@
+use polars::prelude::*;
+
+pub fn apply_frame_sampling(
+    df: &mut DataFrame,
+    decision: &SamplingDecision,
+    total_rows: usize,
+) -> Result<(), crate::error::Error> {
+    if decision.full_scan {
+        return Ok(());
+    }
+    let target = decision
+        .sample_rows
+        .or_else(|| {
+            decision
+                .sample_rate
+                .map(|r| ((r.clamp(0.0, 1.0)) * total_rows as f64) as usize)
+        })
+        .unwrap_or(50_000)
+        .max(1);
+
+    match decision.sample_mode {
+        crate::types::SampleMode::Head => {
+            *df = df.head(Some(target));
+        }
+        crate::types::SampleMode::Random => {
+            let with_replacement = false;
+            let seed = decision.sample_seed.unwrap_or(42);
+            *df = df
+                .sample_n(target, with_replacement, true, Some(seed))
+                .map_err(|e| crate::error::Error::Io(e.to_string()))?;
+        }
+        crate::types::SampleMode::TableSample => {
+            // Not applicable to in-memory frames; fallback to random
+            let seed = decision.sample_seed.unwrap_or(42);
+            *df = df
+                .sample_n(target, false, true, Some(seed))
+                .map_err(|e| crate::error::Error::Io(e.to_string()))?;
+        }
+    }
+    Ok(())
+}
