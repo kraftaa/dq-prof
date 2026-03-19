@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "generated_at": "2026-03-19T20:20:36.667541Z",
+  "dataset": {
+    "dataset_name": "yellow.parquet",
+    "row_count": 2964624,
+    "sampled": true,
+    "sampled_rows": 500000,
+    "sample_mode": "Head",
+    "column_count": 19,
+    "schema_fingerprint": "59fe3b23c76022bd04d06a0f989ce2ea11959a434bdb74154f9f384e0e925040",
+    "columns": [
+      {
+        "name": "VendorID",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 2,
+        "distinct_ratio": 4e-6,
+        "numeric": {
+          "min": 1.0,
+          "max": 2.0,
+          "mean": 1.762066,
+          "stddev": 0.42581894543050636,
+          "q25": 2.0,
+          "q50": 2.0,
+          "q75": 2.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.0
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "tpep_pickup_datetime",
+        "logical_type": "Datetime",
+        "null_ratio": 0.0,
+        "distinct_count": 279075,
+        "distinct_ratio": 0.55815,
+        "numeric": null,
+        "categorical": null,
+        "datetime": {
+          "min_ts": null,
+          "max_ts": null,
+          "freshness_lag_seconds": -1704573216048366,
+          "future_ratio": 1.0
+        }
+      },
+      {
+        "name": "tpep_dropoff_datetime",
+        "logical_type": "Datetime",
+        "null_ratio": 0.0,
+        "distinct_count": 279211,
+        "distinct_ratio": 0.558422,
+        "numeric": null,
+        "categorical": null,
+        "datetime": {
+          "min_ts": null,
+          "max_ts": null,
+          "freshness_lag_seconds": -1704663210048366,
+          "future_ratio": 1.0
+        }
+      },
+      {
+        "name": "passenger_count",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 9,
+        "distinct_ratio": 0.000018,
+        "numeric": {
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 1.414108,
+          "stddev": 0.9117171857503036,
+          "q25": 1.0,
+          "q50": 1.0,
+          "q75": 2.0,
+          "zero_ratio": 0.010582,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.019736
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "trip_distance",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 3396,
+        "distinct_ratio": 0.006792,
+        "numeric": {
+          "min": 0.0,
+          "max": 10879.28,
+          "mean": 3.5900754599999996,
+          "stddev": 16.22811814309172,
+          "q25": 1.03,
+          "q50": 1.78,
+          "q75": 3.44,
+          "zero_ratio": 0.014746,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.000136
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "RatecodeID",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 7,
+        "distinct_ratio": 0.000014,
+        "numeric": {
+          "min": 1.0,
+          "max": 99.0,
+          "mean": 2.056884,
+          "stddev": 9.675676691993324,
+          "q25": 1.0,
+          "q50": 1.0,
+          "q75": 1.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.009842
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "store_and_fwd_flag",
+        "logical_type": "Categorical",
+        "null_ratio": 0.0,
+        "distinct_count": 2,
+        "distinct_ratio": 4e-6,
+        "numeric": null,
+        "categorical": {
+          "top_values": [
+            {
+              "value": "\"N\"",
+              "count": 498149,
+              "ratio": 0.996298
+            },
+            {
+              "value": "\"Y\"",
+              "count": 1851,
+              "ratio": 0.003702
+            }
+          ],
+          "top_value_ratio": 0.996298,
+          "avg_length": 3.0,
+          "empty_string_ratio": 0.0,
+          "is_constant": false
+        },
+        "datetime": null
+      },
+      {
+        "name": "PULocationID",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 240,
+        "distinct_ratio": 0.00048,
+        "numeric": {
+          "min": 1.0,
+          "max": 265.0,
+          "mean": 163.787772,
+          "stddev": 63.38835334225598,
+          "q25": 132.0,
+          "q50": 161.0,
+          "q75": 233.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.0
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "DOLocationID",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 257,
+        "distinct_ratio": 0.000514,
+        "numeric": {
+          "min": 1.0,
+          "max": 265.0,
+          "mean": 163.401238,
+          "stddev": 69.97044760321626,
+          "q25": 114.0,
+          "q50": 162.0,
+          "q75": 234.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.0
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "payment_type",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 4,
+        "distinct_ratio": 8e-6,
+        "numeric": {
+          "min": 1.0,
+          "max": 4.0,
+          "mean": 1.263334,
+          "stddev": 0.5664925827155132,
+          "q25": 1.0,
+          "q50": 1.0,
+          "q75": 1.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.026254
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "fare_amount",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 1432,
+        "distinct_ratio": 0.002864,
+        "numeric": {
+          "min": -404.1,
+          "max": 1616.5,
+          "mean": 19.052738379999997,
+          "stddev": 19.893064433623596,
+          "q25": 8.6,
+          "q50": 12.8,
+          "q75": 21.2,
+          "zero_ratio": 0.000322,
+          "negative_ratio": 0.01393,
+          "outlier_ratio": 0.014086
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "extra",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 30,
+        "distinct_ratio": 0.00006,
+        "numeric": {
+          "min": -7.5,
+          "max": 11.75,
+          "mean": 1.50846442,
+          "stddev": 1.832145610291152,
+          "q25": 0.0,
+          "q50": 1.0,
+          "q75": 2.5,
+          "zero_ratio": 0.421158,
+          "negative_ratio": 0.00689,
+          "outlier_ratio": 0.01536
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "mta_tax",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 5,
+        "distinct_ratio": 0.00001,
+        "numeric": {
+          "min": -0.5,
+          "max": 1.6,
+          "mean": 0.48029479999999997,
+          "stddev": 0.12732767773597,
+          "q25": 0.5,
+          "q50": 0.5,
+          "q75": 0.5,
+          "zero_ratio": 0.01244,
+          "negative_ratio": 0.013488,
+          "outlier_ratio": 0.02593
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "tip_amount",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 2904,
+        "distinct_ratio": 0.005808,
+        "numeric": {
+          "min": -22.24,
+          "max": 280.0,
+          "mean": 3.37425294,
+          "stddev": 4.101538841208637,
+          "q25": 0.0,
+          "q50": 2.66,
+          "q75": 4.2,
+          "zero_ratio": 0.262478,
+          "negative_ratio": 0.000052,
+          "outlier_ratio": 0.028806
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "tolls_amount",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 428,
+        "distinct_ratio": 0.000856,
+        "numeric": {
+          "min": -60.0,
+          "max": 101.69,
+          "mean": 0.5966455,
+          "stddev": 2.2785546720569463,
+          "q25": 0.0,
+          "q50": 0.0,
+          "q75": 0.0,
+          "zero_ratio": 0.919874,
+          "negative_ratio": 0.000926,
+          "outlier_ratio": 0.006724
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "improvement_surcharge",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 4,
+        "distinct_ratio": 8e-6,
+        "numeric": {
+          "min": -1.0,
+          "max": 1.0,
+          "mean": 0.971727,
+          "stddev": 0.23537809642508487,
+          "q25": 1.0,
+          "q50": 1.0,
+          "q75": 1.0,
+          "zero_ratio": 0.000262,
+          "negative_ratio": 0.013974,
+          "outlier_ratio": 0.014236
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "total_amount",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 10692,
+        "distinct_ratio": 0.021384,
+        "numeric": {
+          "min": -426.54,
+          "max": 1617.5,
+          "mean": 27.808266040000003,
+          "stddev": 24.627005167046796,
+          "q25": 15.25,
+          "q50": 20.15,
+          "q75": 29.6,
+          "zero_ratio": 0.000148,
+          "negative_ratio": 0.013974,
+          "outlier_ratio": 0.017196
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "congestion_surcharge",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 4,
+        "distinct_ratio": 8e-6,
+        "numeric": {
+          "min": -2.5,
+          "max": 2.5,
+          "mean": 2.2130765,
+          "stddev": 0.8815654170071096,
+          "q25": 2.5,
+          "q50": 2.5,
+          "q75": 2.5,
+          "zero_ratio": 0.09202,
+          "negative_ratio": 0.011374,
+          "outlier_ratio": 0.011374
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "Airport_fee",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 6e-6,
+        "numeric": {
+          "min": -1.75,
+          "max": 1.75,
+          "mean": 0.163191,
+          "stddev": 0.519912721653814,
+          "q25": 0.0,
+          "q50": 0.0,
+          "q75": 0.0,
+          "zero_ratio": 0.90304,
+          "negative_ratio": 0.001854,
+          "outlier_ratio": 0.09696
+        },
+        "categorical": null,
+        "datetime": null
+      }
+    ]
+  }
+}

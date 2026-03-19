@@ -50,8 +50,9 @@ Inspect a file:
 dq-prof examples/clean_sales.csv
 ```
 
-Compare to baseline:
+Compare to baseline (full scan required to save):
 ```bash
+dq-prof data.csv --full-scan --save-baseline baseline.json
 dq-prof data.csv --baseline baseline.json --fail-on warning
 ```
 
