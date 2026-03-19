@@ -1,0 +1,11 @@
+order_id,region,revenue,status,created_at
+1,US,,complete,2025-03-01T00:00:00Z
+2,US,0.0,complete,2025-03-01T00:10:00Z
+3,US,0.0,complete,2025-03-01T00:20:00Z
+4,US,0.0,complete,2025-03-01T00:30:00Z
+5,US,0.0,complete,2025-03-01T00:40:00Z
+6,US,0.0,complete,2025-03-01T00:50:00Z
+7,US,0.0,complete,2025-03-01T01:00:00Z
+8,US,0.0,complete,2025-03-01T01:10:00Z
+9,US,0.0,complete,2025-03-01T01:20:00Z
+10,US,0.0,complete,2025-03-01T01:30:00Z

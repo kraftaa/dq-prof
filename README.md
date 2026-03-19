@@ -1,29 +1,68 @@
-# dq-prof 0.1.3
+# dq-prof 0.1.4
 
-Fast CLI to sanity-check CSV/Parquet/Postgres datasets, flag nulls/skew/outliers/freshness/schema drift, and fail CI if data looks wrong.
+Fast, zero-config data sanity checks for pipelines. Like Ruff, but for datasets.
 
-## Install & run (no Rust needed)
-- Download release binary from GitHub Releases (tarball includes `dq-prof`), `chmod +x dq-prof`, then run: `./dq-prof your.parquet`.
-- Or pip: `pip install dq-prof` (bundles the binary) then run `dq-prof --help`.
+## Quick example
 
-## Quick examples
-- Inspect current file: `dq-prof data.parquet --format text`
-- Compare to baseline: `dq-prof data.csv --baseline baseline.json --fail-on warning`
-- Postgres table sampled randomly: `dq-prof public.sales --pg-url postgres://user:pass@host/db --sample-mode random --sample-rows 50000`
-
-Sample output (text):
-```
+```bash
+dq-prof data.parquet
 DATA HEALTH: WARN
-Rows: 50k sampled of 2.4M (mode=Random)
+
 CRITICAL
-- created_at: stale timestamps (obs=2025-03-01T00:00:00Z)
+- created_at: stale timestamps (last value 2025-03-01)
+
 WARNING
-- revenue: high null ratio (obs=0.12, exp=< 0.05)
+- revenue: nulls 12% (expected <5%)
+- region: skew (US = 78%)
 ```
 
-## Why use dq-prof
-- Zero-config: sensible built-in rules; no YAML test authoring.
-- Fast defaults: sampling with full row counts; Polars-backed stats.
-- Baseline-aware: save/compare tiny JSON baselines; warns on schema or distribution drift.
-- CI-friendly: exit codes, `--color never`, text/JSON outputs, works on local files or Postgres views.
-- Lightweight: single binary or pip wheel; no agents, servers, or heavyweight expectations frameworks.
+## Why dq-prof
+
+- **Zero config** – no YAML, no expectations to write
+- **Fast** – samples by default; runs in seconds
+- **Catches real issues** – null spikes, skew, outliers, freshness, schema drift
+- **Baseline-aware** – compare to previous runs to spot drift
+- **CI-friendly** – fail pipelines when data looks suspicious
+
+## Install
+
+Download a release binary and run:
+```bash
+chmod +x dq-prof
+./dq-prof data.parquet
+```
+
+Or pip:
+```bash
+pip install dq-prof
+dq-prof --help
+```
+
+## Examples
+
+Inspect a file:
+```bash
+dq-prof examples/clean_sales.csv
+```
+
+Compare to baseline:
+```bash
+dq-prof data.csv --baseline baseline.json --fail-on warning
+```
+
+Postgres:
+```bash
+dq-prof public.sales \
+  --pg-url postgres://user:pass@host/db \
+  --sample-rows 50000
+```
+
+## Output
+
+Text or JSON with severity:
+- **CRITICAL** – likely broken data
+- **WARNING** – suspicious change
+
+## Philosophy
+
+dq-prof is not a data observability platform. It’s a fast sanity check you run inline — a linter for data — before or after a pipeline step to catch issues immediately.
