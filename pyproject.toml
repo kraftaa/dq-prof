@@ -20,5 +20,4 @@ scripts = { dq-prof = "dq_prof.cli:main" }
 [tool.maturin]
 bindings = "bin"
 strip = true
-python-source = "python"
 include = ["dq_prof/bin/dq-prof"]
