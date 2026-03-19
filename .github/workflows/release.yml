@@ -68,9 +68,6 @@ jobs:
           name: wheel-${{ matrix.target }}
           path: python/target/wheels/*.whl
 
-  build-binaries:
-    if: false # disabled: wheels already ship the binary; drop standalone tarballs to save minutes
-
   publish-pypi:
     needs: [build-wheels-linux, build-wheels-macos]
     runs-on: ubuntu-latest
