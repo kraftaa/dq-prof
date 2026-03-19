@@ -1,0 +1,11 @@
+order_id,region,revenue,status,created_at
+1,US,120.50,complete,2025-03-01T12:00:00Z
+2,US,95.00,complete,2025-03-01T12:10:00Z
+3,US,40.25,complete,2025-03-01T12:20:00Z
+4,US,77.00,complete,2025-03-01T12:30:00Z
+5,US,88.10,complete,2025-03-01T12:40:00Z
+6,US,105.75,complete,2025-03-01T12:50:00Z
+7,US,60.00,complete,2025-03-01T13:00:00Z
+8,US,45.25,complete,2025-03-01T13:10:00Z
+9,US,130.00,complete,2025-03-01T13:20:00Z
+10,US,110.00,complete,2025-03-01T13:30:00Z

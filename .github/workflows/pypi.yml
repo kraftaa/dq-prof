@@ -38,6 +38,11 @@ jobs:
         run: ./release.sh
       - name: Embed binary into Python package
         run: ./python/prepare_binary.sh
+      - name: Verify embedded binary
+        run: |
+          ls -l dist || true
+          ls -l python/dq_prof/bin || true
+          test -f python/dq_prof/bin/dq-prof
       - name: Install build tooling
         run: |
           python -m pip install --upgrade pip

@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "generated_at": "2026-03-19T20:49:48.231205Z",
+  "dataset": {
+    "dataset_name": "clean_sales.csv",
+    "row_count": 10,
+    "sampled": false,
+    "sampled_rows": 10,
+    "sample_mode": "Head",
+    "column_count": 5,
+    "schema_fingerprint": "51f58e290629d00cd62f4fd4cb469fd80f800cf37c97ac0b885d697490aa1f14",
+    "columns": [
+      {
+        "name": "order_id",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 10,
+        "distinct_ratio": 1.0,
+        "numeric": {
+          "min": 1.0,
+          "max": 10.0,
+          "mean": 5.5,
+          "stddev": 3.0276503540974917,
+          "q25": 3.0,
+          "q50": 6.0,
+          "q75": 8.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.0
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "region",
+        "logical_type": "Categorical",
+        "null_ratio": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.3,
+        "numeric": null,
+        "categorical": {
+          "top_values": [
+            {
+              "value": "\"US\"",
+              "count": 6,
+              "ratio": 0.6
+            },
+            {
+              "value": "\"CA\"",
+              "count": 2,
+              "ratio": 0.2
+            },
+            {
+              "value": "\"GB\"",
+              "count": 2,
+              "ratio": 0.2
+            }
+          ],
+          "top_value_ratio": 0.6,
+          "avg_length": 4.0,
+          "empty_string_ratio": 0.0,
+          "is_constant": false
+        },
+        "datetime": null
+      },
+      {
+        "name": "revenue",
+        "logical_type": "Numeric",
+        "null_ratio": 0.0,
+        "distinct_count": 10,
+        "distinct_ratio": 1.0,
+        "numeric": {
+          "min": 40.25,
+          "max": 130.0,
+          "mean": 87.185,
+          "stddev": 31.045316787632306,
+          "q25": 60.0,
+          "q50": 95.0,
+          "q75": 110.0,
+          "zero_ratio": 0.0,
+          "negative_ratio": 0.0,
+          "outlier_ratio": 0.0
+        },
+        "categorical": null,
+        "datetime": null
+      },
+      {
+        "name": "status",
+        "logical_type": "Categorical",
+        "null_ratio": 0.0,
+        "distinct_count": 1,
+        "distinct_ratio": 0.1,
+        "numeric": null,
+        "categorical": {
+          "top_values": [
+            {
+              "value": "\"complete\"",
+              "count": 10,
+              "ratio": 1.0
+            }
+          ],
+          "top_value_ratio": 1.0,
+          "avg_length": 10.0,
+          "empty_string_ratio": 0.0,
+          "is_constant": true
+        },
+        "datetime": null
+      },
+      {
+        "name": "created_at",
+        "logical_type": "Categorical",
+        "null_ratio": 0.0,
+        "distinct_count": 10,
+        "distinct_ratio": 1.0,
+        "numeric": null,
+        "categorical": {
+          "top_values": [
+            {
+              "value": "\"2025-03-01T12:10:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T12:20:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T12:50:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T12:00:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T13:20:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T12:30:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T13:30:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T13:10:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T12:40:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            },
+            {
+              "value": "\"2025-03-01T13:00:00Z\"",
+              "count": 1,
+              "ratio": 0.1
+            }
+          ],
+          "top_value_ratio": 0.1,
+          "avg_length": 22.0,
+          "empty_string_ratio": 0.0,
+          "is_constant": false
+        },
+        "datetime": null
+      }
+    ]
+  }
+}

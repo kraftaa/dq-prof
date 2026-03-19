@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-03-19T20:20:36.667541Z",
+  "generated_at": "2026-03-19T20:44:40.088364Z",
   "dataset": {
     "dataset_name": "yellow.parquet",
     "row_count": 2964624,
@@ -42,7 +42,7 @@
         "datetime": {
           "min_ts": null,
           "max_ts": null,
-          "freshness_lag_seconds": -1704573216048366,
+          "freshness_lag_seconds": -1704573216046923,
           "future_ratio": 1.0
         }
       },
@@ -57,7 +57,7 @@
         "datetime": {
           "min_ts": null,
           "max_ts": null,
-          "freshness_lag_seconds": -1704663210048366,
+          "freshness_lag_seconds": -1704663210046923,
           "future_ratio": 1.0
         }
       },
