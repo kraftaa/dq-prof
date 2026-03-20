@@ -130,6 +130,7 @@ jobs:
         with:
           packages-dir: dist
           verify-metadata: false
+          skip-existing: true
 
   github-release:
     needs: [publish-pypi]
