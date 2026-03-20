@@ -464,7 +464,7 @@ dependencies = [
 
 [[package]]
 name = "dq-prof"
-version = "0.1.16"
+version = "0.1.19"
 dependencies = [
  "chrono",
  "clap",
