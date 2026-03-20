@@ -87,7 +87,9 @@ Postgres:
 ```bash
 dq-prof public.sales \
   --pg-url postgres://user:pass@host/db \
-  --sample-rows 50000
+  --sample-rows 50000 \
+  --format json \
+  --fail-on warning
 ```
 
 JSON output:
