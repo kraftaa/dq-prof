@@ -64,13 +64,7 @@ WARNING
 
 ## Install
 
-Download a release binary and run:
-```bash
-chmod +x dq-prof
-./dq-prof data.parquet
-```
-
-Or pip:
+Install via pip:
 ```bash
 pip install dq-prof
 dq-prof --help
