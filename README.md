@@ -90,6 +90,20 @@ dq-prof public.sales \
   --sample-rows 50000 \
   --format json \
   --fail-on warning
+
+Random sampling:
+```bash
+dq-prof data.parquet \
+  --sample-mode random \
+  --sample-rows 50000 \
+  --format json
+```
+You can also sample by rate (defaults to 50k rows if not specified):
+```bash
+dq-prof data.parquet \
+  --sample-mode random \
+  --sample-rate 0.10
+```
 ```
 
 JSON output:
