@@ -1,6 +1,6 @@
-# dq-prof 0.1.19
+# dq-prof 0.1.20
 
-[![Release](https://img.shields.io/github/v/release/kraftaa/dq-prof)](https://github.com/kraftaa/dq-prof/releases)
+<!-- [![Release](https://img.shields.io/github/v/release/kraftaa/dq-prof)](https://github.com/kraftaa/dq-prof/releases) -->
 
 Fast, zero-config data sanity checks for pipelines.
 
