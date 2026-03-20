@@ -90,6 +90,7 @@ dq-prof public.sales \
   --sample-rows 50000 \
   --format json \
   --fail-on warning
+```
 
 Random sampling:
 ```bash
@@ -104,6 +105,20 @@ dq-prof data.parquet \
   --sample-mode random \
   --sample-rate 0.10
 ```
+```
+
+## Integrate into pipelines
+
+dq-prof fits into any data workflow — no integration required. After a pipeline step (dbt, Spark, Python, etc.), run it on the resulting data:
+
+Postgres / dbt model:
+```bash
+dq-prof public.orders --pg-url $DATABASE_URL --fail-on warning
+```
+
+File output (Spark / batch):
+```bash
+dq-prof output/orders.parquet --fail-on warning
 ```
 
 JSON output:
