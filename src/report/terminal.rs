@@ -17,9 +17,11 @@ pub fn print_to(
     apply_color_choice(color);
     writeln!(
         out,
-        "{}: {}",
+        "{}: {} ({} critical, {} warnings)",
         Paint::new("DATA HEALTH").bold(),
-        color_status(&report.summary.status)
+        color_status(&report.summary.status),
+        report.summary.critical_count,
+        report.summary.warning_count
     )?;
     writeln!(
         out,
@@ -83,19 +85,21 @@ fn render_status(status: &HealthStatus) -> &'static str {
 fn format_rows(report: &ProfileReport) -> String {
     let sampled_rows = report.dataset.sampled_rows.unwrap_or(report.dataset.row_count);
     if report.dataset.sampled {
-        format!("{} sampled of {}", sampled_rows, report.dataset.row_count)
+        format!(
+            "{} sampled of {} ({} sampling)",
+            sampled_rows,
+            report.dataset.row_count,
+            match report.dataset.sample_mode {
+                Some(ref m) => format!("{:?}", m).to_ascii_lowercase(),
+                None => "head".into()
+            }
+        )
     } else {
         format!("{}", report.dataset.row_count)
     }
 }
 
-fn format_sample_mode(report: &ProfileReport) -> String {
-    if report.dataset.sampled {
-        if let Some(mode) = &report.dataset.sample_mode {
-            return format!(" (mode={:?})", mode);
-        }
-        return " (sampled)".into();
-    }
+fn format_sample_mode(_report: &ProfileReport) -> String {
     "".into()
 }
 

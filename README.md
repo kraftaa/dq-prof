@@ -96,6 +96,11 @@ dq-prof public.sales \
   --sample-rows 50000
 ```
 
+JSON output:
+```bash
+dq-prof data.parquet --format json
+```
+
 ## Output
 
 Text or JSON with severity:
