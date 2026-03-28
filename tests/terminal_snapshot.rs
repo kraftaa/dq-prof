@@ -56,7 +56,7 @@ fn terminal_output_stable_no_color() {
     print_to(&report, ColorChoice::Never, &mut buf).unwrap();
     let output = String::from_utf8(buf).unwrap();
     let expected = "\
-DATA HEALTH: FAIL (1 critical, 1 warnings)\n\
+DATA HEALTH: FAIL (1 critical, 1 warning)\n\
 Rows: 20 sampled of 100 (head sampling)\n\
 Sampling: sampling differs\n\
 Timing: load 1 ms | profile 2 ms | rules 3 ms | total 6 ms\n\

@@ -105,7 +105,6 @@ dq-prof data.parquet \
   --sample-mode random \
   --sample-rate 0.10
 ```
-```
 
 ## Integrate into pipelines
 

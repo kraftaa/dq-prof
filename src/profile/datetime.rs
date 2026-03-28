@@ -12,7 +12,10 @@ pub fn profile_datetime(series: &Series) -> DateTimeProfile {
         _ => series.clone(),
     };
 
-    let ca = dt_series.datetime().expect("datetime cast");
+    let ca = match dt_series.datetime() {
+        Ok(ca) => ca,
+        Err(_) => return empty_datetime_profile(),
+    };
     let min = ca.min();
     let max = ca.max();
     let now_ms = Utc::now().timestamp_millis();
@@ -41,5 +44,14 @@ pub fn profile_datetime(series: &Series) -> DateTimeProfile {
         max_ts,
         freshness_lag_seconds,
         future_ratio,
+    }
+}
+
+fn empty_datetime_profile() -> DateTimeProfile {
+    DateTimeProfile {
+        min_ts: None,
+        max_ts: None,
+        freshness_lag_seconds: None,
+        future_ratio: None,
     }
 }

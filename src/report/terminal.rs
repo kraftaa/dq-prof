@@ -17,18 +17,15 @@ pub fn print_to(
     apply_color_choice(color);
     writeln!(
         out,
-        "{}: {} ({} critical, {} warnings)",
+        "{}: {} ({} {}, {} {})",
         Paint::new("DATA HEALTH").bold(),
         color_status(&report.summary.status),
         report.summary.critical_count,
-        report.summary.warning_count
+        pluralize(report.summary.critical_count, "critical"),
+        report.summary.warning_count,
+        pluralize(report.summary.warning_count, "warning")
     )?;
-    writeln!(
-        out,
-        "Rows: {}{}",
-        format_rows(report),
-        format_sample_mode(report)
-    )?;
+    writeln!(out, "Rows: {}", format_rows(report))?;
     if let Some(note) = &report.summary.sampling_note {
         writeln!(out, "Sampling: {note}")?;
     }
@@ -99,15 +96,19 @@ fn format_rows(report: &ProfileReport) -> String {
     }
 }
 
-fn format_sample_mode(_report: &ProfileReport) -> String {
-    "".into()
-}
-
 fn color_status(status: &HealthStatus) -> Painted<&'static str> {
     match status {
         HealthStatus::Pass => Paint::green(render_status(status)).bold(),
         HealthStatus::Warn => Paint::yellow(render_status(status)).bold(),
         HealthStatus::Fail => Paint::red(render_status(status)).bold(),
+    }
+}
+
+fn pluralize(n: usize, word: &str) -> String {
+    if n == 1 {
+        word.to_string()
+    } else {
+        format!("{word}s")
     }
 }
 

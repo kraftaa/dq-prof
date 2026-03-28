@@ -3,8 +3,14 @@ use polars::prelude::*;
 use crate::types::NumericProfile;
 
 pub fn profile_numeric(series: &Series) -> NumericProfile {
-    let cast = series.cast(&DataType::Float64).unwrap_or_else(|_| series.clone());
-    let ca = cast.f64().expect("float casting");
+    let cast = match series.cast(&DataType::Float64) {
+        Ok(s) => s,
+        Err(_) => return empty_numeric_profile(),
+    };
+    let ca = match cast.f64() {
+        Ok(ca) => ca,
+        Err(_) => return empty_numeric_profile(),
+    };
     let len = ca.len() as f64;
     let valid: Vec<f64> = ca.into_iter().flatten().collect();
 
@@ -55,5 +61,20 @@ pub fn profile_numeric(series: &Series) -> NumericProfile {
         zero_ratio,
         negative_ratio,
         outlier_ratio,
+    }
+}
+
+fn empty_numeric_profile() -> NumericProfile {
+    NumericProfile {
+        min: None,
+        max: None,
+        mean: None,
+        stddev: None,
+        q25: None,
+        q50: None,
+        q75: None,
+        zero_ratio: None,
+        negative_ratio: None,
+        outlier_ratio: None,
     }
 }

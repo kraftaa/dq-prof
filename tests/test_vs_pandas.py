@@ -20,6 +20,8 @@ def run_dq_prof(path: Path):
             str(path),
             "--format",
             "json",
+            "--fail-on",
+            "none",
         ],
         cwd=ROOT,
         check=True,

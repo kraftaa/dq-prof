@@ -43,6 +43,11 @@ pub fn evaluate(current: &DatasetProfile, baseline: Option<&BaselineFile>) -> Ve
     }
 
     if !low_cards.is_empty() {
+        let preview_len = low_cards.len().min(5);
+        let mut preview = low_cards[..preview_len].join(", ");
+        if low_cards.len() > preview_len {
+            preview.push_str(", ...");
+        }
         issues.push(Issue {
             rule_id: "low_cardinality_grouped".into(),
             severity: Severity::Warning,
@@ -50,7 +55,7 @@ pub fn evaluate(current: &DatasetProfile, baseline: Option<&BaselineFile>) -> Ve
             message: format!(
                 "{} columns have low cardinality: {}",
                 low_cards.len(),
-                low_cards.join(", ")
+                preview
             ),
             observed: None,
             expected: Some("> 0.01".into()),
